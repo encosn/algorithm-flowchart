@@ -351,3 +351,17 @@ SVG는 항상 `viewBox="0 0 1100 650"` 내부 좌표를 쓴다. `toSvgPoint()` �
 | `tests/run-tests.js` | 단위 시험 52개 (`npm test`, `flowchart-core.js` 대상) |
 | `tests/run-algorithm-tests.js` | 단위 시험 41개 (`npm test`, `algorithm-core.js` 대상) |
 | `vite.config.mjs` | 포트 8086, `base: './'`, 일반 스크립트 복사 플러그인(`flowchart-core.js`/`algorithm-core.js`/`scenarios.js`/`main.js`) |
+
+## 주소창 아이콘 (favicon) — 2026-09-08 추가
+
+`favicon.svg` 한 파일이다. **순서도의 판단 기호(마름모)**을 `#8b5cf6` 바탕에 흰 획으로 그렸다.
+`index.html` 의 `<title>` 바로 뒤에 `<link rel="icon">` 한 줄이 들어 있다.
+
+- 색은 `hub` 의 단원 색 계열에서 골랐고, **같은 단원 앱끼리도 탭에서 구별되도록** 조금씩 다르다.
+  전체 대응표는 루트 `CLAUDE.md` 의 「앱 아이콘」 절에 있다.
+- **글꼴을 쓰지 않고 획으로 그렸다.** 글꼴로 만들면 그 글꼴이 없는 기기에서 모양이 달라진다.
+  16px 로 줄어드는 것을 전제로 **그림 하나만** 넣었다.
+- ⚠️ **XML 주석 안에 붙임표 두 개를 쓰면 SVG 가 그림으로 열리지 않는다.**
+  브라우저는 그 오류를 조용히 삼키고 아이콘만 안 보이므로 알아채기 어렵다.
+- PNG 대체본은 두지 않았다. 이 앱을 열 수 있는 브라우저면 SVG 아이콘도 읽는다
+  (`hub` 만 PNG 를 함께 둔다 — 입구라 어떤 기기로 들어올지 모르기 때문이다).

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">문제 정의와 순서도</title>
+
+  <!-- 주소창과 탭에 뜨는 아이콘. 3단원 알고리즘 앱이다.
+       색은 hub 의 단원 색 계열에서 골랐고, 같은 단원 앱끼리도 탭에서
+       구별되도록 조금씩 다르게 두었다.
+       16px 로 줄어들어도 읽히도록 그림 하나만 굵은 획으로 그렸다.
+       글꼴은 쓰지 않는다. 글꼴이 없는 기기에서 모양이 달라지기 때문이다.
+       주의: XML 주석 안에는 붙임표 두 개를 쓸 수 없다. 쓰면 이 파일이
+       그림으로 열리지 않고, 브라우저는 오류를 조용히 삼킨다. -->
+  <rect width="64" height="64" rx="14" fill="#8b5cf6"/>
+  <g fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round">
+      <path d="M32 13L51 32L32 51L13 32Z"/>
+    </g>
+</svg>

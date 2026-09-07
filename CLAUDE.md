@@ -81,10 +81,25 @@
   없음 둘 다), 미리보기 실시간 갱신, 글로 저장(.txt), 새로고침 후 답 복원까지 확인했다. `npm run build`
   로 만든 `dist/` 에 `algorithm-core.js` 가 제대로 복사되는 것도 확인함.
 - 실제 교실 사용은 아직 안 해 봤다. 수업 뒤 피드백으로 문제 상황·문구를 다듬을 것.
-- 아직 안 한 것
-  - [ ] GitHub 저장소 만들고 Actions 배포 (`.github/workflows/deploy.yml` 없음)
-  - [ ] `hub/data.js` 3단원 `activities` 에 항목 추가 (지금은 `status: 'soon'`으로만 넣어 둠 — 배포 후 `url` 채우고 `'ready'`로)
-  - [ ] `dist/` 빌드 결과를 실제 브라우저로 열어서 확인 (지금까지는 `npm start` 개발 서버로만 확인함)
+### 배포 (2026-09-07)
+- [x] GitHub 저장소 `encosn/algorithm-flowchart` 생성, `main` 브랜치 푸시
+- [x] Actions 배포(`npm ci` → `npm test` → `npm run build` → Pages) 성공
+      → **https://encosn.github.io/algorithm-flowchart/**
+- [x] 배포된 사이트를 브라우저로 열어 콘솔 오류 0건, 자원 전부 200 확인
+      (이것으로 `dist/` 빌드 결과 실물 확인도 함께 끝났다)
+- [x] `hub/data.js` 의 `url` 채우고 `status: 'ready'` 로 변경 → hub 저장소에 푸시,
+      배포된 hub 단원 페이지에서 활동이 나오는 것까지 확인
+
+  ⚠️ 첫 배포에서 두 가지에 걸렸다 — ① `gh` 토큰에 `workflow` 권한이 없어
+  `.github/workflows/` 푸시가 거부됐다(`gh auth refresh -h github.com -s workflow` 로 해결).
+  ② 새 저장소라 워크플로의 `configure-pages`(`enablement:true`)가
+  "Resource not accessible by integration" 으로 실패했다 —
+  `gh api -X POST repos/encosn/algorithm-flowchart/pages -f build_type=workflow` 로 Pages 를 켠 뒤
+  `gh run rerun` 하니 통과했다. **다음에 새 앱을 배포할 때도 같은 순서로 하면 된다.**
+
+### 아직 안 한 것
+- [ ] `index.html` 더블클릭(`file://`) 실물 확인 (구조적으로는 조건 충족)
+- [ ] 실제 교실에서 써 보고 문제 상황·문구 다듬기
 
 ---
 
